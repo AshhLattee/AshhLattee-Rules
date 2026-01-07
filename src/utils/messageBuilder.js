@@ -1,7 +1,7 @@
 // Rules Menu Bot - Discord Rules Management System
 // Copyright (C) 2026 AshhLattee
-// Licensed under GPL-3.0 - see LICENSE file
-// GitHub: https://github.com/AshhLattee/rules-menu-bot
+// Licensed under Apache 2.0 with Commons Clause - see LICENSE file
+// GitHub: https://github.com/AshhLattee/AshhLattee-Rules
 
 const { ContainerBuilder, ButtonStyle, MessageFlags } = require('discord.js');
 const rulesManager = require('./rulesManager');

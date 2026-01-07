@@ -112,4 +112,4 @@ Done! The rules message will automatically update.
 
 ## Need Help?
 
-Open an issue on GitHub: https://github.com/AshhLattee/rules-menu-bot/issues
+Open an issue on GitHub: https://github.com/AshhLattee/AshhLattee-Rules/issues

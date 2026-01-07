@@ -4,27 +4,28 @@ A free, open-source Discord bot that provides an interactive rules menu using Di
 
 ## ⚠️ ANTI-RESALE NOTICE
 
-**This bot is FREE and open-source under Apache License 2.0 with Commons Clause.**
+This bot is **source-available** and licensed under **Apache License 2.0 with Commons Clause**.
 
-### If you are selling this bot:
-- You are **violating copyright law**
-- You are committing **license infringement**
-- Your rights to use this code are **automatically terminated**
-- You will face **legal action** including:
-  - DMCA takedown notices
-  - Cease and desist letters
-  - Civil lawsuits for damages
-  - Payment processor/platform bans
+The Commons Clause **explicitly prohibits** selling the bot (or offering it as a paid/hosted service) where its main value comes from this code — even with minor changes like renaming/reskinning.
 
-### We WILL enforce this:
-- All sales are tracked and reported
-- GitHub commit history proves original authorship
-- Legal action will be taken against resellers
-- Commons Clause specifically prohibits commercial sale
+If you're selling copies or "premium" versions of this bot:
+- You're exceeding the license grant → violating the terms.
+- This may constitute copyright infringement (especially if notices/attribution are removed).
+- Your permission to use/distribute the code is limited or revoked under the license.
 
-**If you paid for this bot:** You were scammed. Report the seller and download the free version from the official repository.
+We take this seriously:
+- GitHub commit history + timestamps prove original authorship (AshhLattee, 2026).
+- Public callouts + reports to marketplaces/platforms happen when violations are found.
+- Cease & desist letters will be sent to clear violators.
+- Further legal action (including claims for damages) is possible if needed.
 
-**Official Repository:** https://github.com/AshhLattee/rules-menu-bot
+If you **paid** for this bot: You were likely scammed.  
+Delete it, report the seller, and download the **free official version** here.  
+The community stays protected when we all use/share it properly.
+
+Fork, modify, learn — just don't resell lazy copies. Thanks for respecting the work! 🌙
+
+**Official Repository:** https://github.com/AshhLattee/AshhLattee-Rules
 
 ---
 
@@ -47,8 +48,8 @@ A free, open-source Discord bot that provides an interactive rules menu using Di
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/AshhLattee/rules-menu-bot.git
-cd rules-menu-bot
+git clone https://github.com/AshhLattee/AshhLattee-Rules.git
+cd AshhLattee-Rules
 ```
 
 2. **Install dependencies:**
