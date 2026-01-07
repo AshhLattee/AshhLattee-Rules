@@ -33,7 +33,7 @@ async function handleViewRules(interaction) {
     }
 
     const embed = new EmbedBuilder()
-        .setTitle(`${category.emoji ? category.emoji + ' ' : ''}${category.label}`)
+        .setTitle(category.label)
         .setDescription(category.rules.map((rule, i) => `${i + 1}. ${rule}`).join('\n'))
         .setColor(category.color || 0x5865F2)
         .setFooter({ text: 'Server Rules' })

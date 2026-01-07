@@ -34,8 +34,7 @@ module.exports = {
             .addOptions(
                 categories.map(cat => ({
                     label: cat.label,
-                    value: cat.id,
-                    emoji: cat.emoji || undefined
+                    value: cat.id
                 }))
             );
 

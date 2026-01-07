@@ -28,7 +28,6 @@ module.exports = {
 async function handleAddCategory(interaction) {
     const id = interaction.fields.getTextInputValue('category_id').toLowerCase().replace(/\s+/g, '_');
     const label = interaction.fields.getTextInputValue('category_label');
-    const emoji = interaction.fields.getTextInputValue('category_emoji') || null;
     const rulesText = interaction.fields.getTextInputValue('category_rules');
 
     // Check if category already exists
@@ -47,7 +46,6 @@ async function handleAddCategory(interaction) {
     const category = {
         id,
         label,
-        emoji,
         rules,
         color: 0x5865F2
     };
@@ -83,14 +81,12 @@ async function handleEditCategory(interaction) {
     }
 
     const label = interaction.fields.getTextInputValue('category_label');
-    const emoji = interaction.fields.getTextInputValue('category_emoji') || null;
     const rulesText = interaction.fields.getTextInputValue('category_rules');
 
     const rules = rulesText.split('\n').filter(line => line.trim()).map(line => line.trim());
 
     const updatedCategory = {
         label,
-        emoji,
         rules
     };
 

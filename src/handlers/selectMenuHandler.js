@@ -41,7 +41,7 @@ async function handleRulesSelect(interaction, categoryId) {
     }
 
     const embed = new EmbedBuilder()
-        .setTitle(`${category.emoji ? category.emoji + ' ' : ''}${category.label}`)
+        .setTitle(category.label)
         .setDescription(category.rules.map((rule, i) => `${i + 1}. ${rule}`).join('\n'))
         .setColor(category.color || 0x5865F2)
         .setFooter({ text: 'Server Rules' })
@@ -75,14 +75,6 @@ async function handleEditSelect(interaction, categoryId) {
         .setRequired(true)
         .setMaxLength(100);
 
-    const emojiInput = new TextInputBuilder()
-        .setCustomId('category_emoji')
-        .setLabel('Emoji')
-        .setStyle(TextInputStyle.Short)
-        .setValue(category.emoji || '')
-        .setRequired(false)
-        .setMaxLength(10);
-
     const rulesInput = new TextInputBuilder()
         .setCustomId('category_rules')
         .setLabel('Rules (one per line)')
@@ -93,7 +85,6 @@ async function handleEditSelect(interaction, categoryId) {
 
     modal.addComponents(
         new ActionRowBuilder().addComponents(labelInput),
-        new ActionRowBuilder().addComponents(emojiInput),
         new ActionRowBuilder().addComponents(rulesInput)
     );
 

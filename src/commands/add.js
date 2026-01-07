@@ -39,14 +39,6 @@ module.exports = {
             .setRequired(true)
             .setMaxLength(100);
 
-        const emojiInput = new TextInputBuilder()
-            .setCustomId('category_emoji')
-            .setLabel('Emoji (optional)')
-            .setStyle(TextInputStyle.Short)
-            .setPlaceholder('e.g., 📜')
-            .setRequired(false)
-            .setMaxLength(10);
-
         const rulesInput = new TextInputBuilder()
             .setCustomId('category_rules')
             .setLabel('Rules (one per line)')
@@ -58,7 +50,6 @@ module.exports = {
         modal.addComponents(
             new ActionRowBuilder().addComponents(idInput),
             new ActionRowBuilder().addComponents(labelInput),
-            new ActionRowBuilder().addComponents(emojiInput),
             new ActionRowBuilder().addComponents(rulesInput)
         );
 

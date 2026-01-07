@@ -26,11 +26,11 @@ async function createRulesMessage() {
         );
 
     // Add each category as a section with a button
-    categories.forEach(cat => {
+    categories.forEach((cat, index) => {
         container.addSectionComponents((section) =>
             section
                 .addTextDisplayComponents((textDisplay) =>
-                    textDisplay.setContent(`${cat.emoji ? cat.emoji + ' ' : ''}**${cat.label}**`)
+                    textDisplay.setContent(`**${cat.label}**`)
                 )
                 .setButtonAccessory((button) =>
                     button
@@ -39,6 +39,11 @@ async function createRulesMessage() {
                         .setStyle(ButtonStyle.Primary)
                 )
         );
+        
+        // Add separator after each category except the last one
+        if (index < categories.length - 1) {
+            container.addSeparatorComponents((separator) => separator);
+        }
     });
 
     return {
