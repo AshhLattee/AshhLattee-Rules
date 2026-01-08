@@ -1,4 +1,4 @@
-# Rules Menu Bot
+# Rules Bot
 
 A free, open-source Discord bot that provides an interactive rules menu using Discord's Components v2. Built with discord.js and fully customizable through slash commands.
 
@@ -31,160 +31,93 @@ Fork, modify, learn — just don't resell lazy copies. Thanks for respecting the
 
 ## ✨ Features
 
-- 📋 **Interactive Select Menus** - Modern Discord Components v2 UI
-- ⚡ **Easy Management** - Add, edit, and delete rule categories via slash commands
-- 🎨 **Customizable** - Set custom emojis, colors, and descriptions for each category
-- 💾 **Persistent** - Automatically updates existing message on bot restart
-- 🔒 **Admin Only** - All management commands require Administrator permission
-- 📱 **User Friendly** - No coding required to manage rules
+- 📋 **Interactive Buttons** - Modern Discord Components v2 UI with container-based layout
+- ⚡ **Easy Management** - Modal-based interface with file upload support for thumbnails
+- 🎨 **Full Markdown** - Complete control over rule formatting and styling
+- 💾 **Persistent** - Auto-updates existing message, remembers channel and message ID
+- 🔒 **Admin Only** - All commands require Administrator permission
+- 📸 **Image Support** - Upload thumbnails for main message via modal
 
-## 📋 Requirements
+## 🚀 Quick Start
 
-- Node.js 16.9.0 or higher
-- A Discord bot token ([Get one here](https://discord.com/developers/applications))
-- Administrator permission in your Discord server
+### 1. Get Bot Token
+1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create New Application → Bot tab → Add Bot
+3. Copy your bot token and Application ID
 
-## 🚀 Installation
-
-1. **Clone the repository:**
+### 2. Setup & Run
 ```bash
 git clone https://github.com/AshhLattee/AshhLattee-Rules.git
 cd AshhLattee-Rules
-```
-
-2. **Install dependencies:**
-```bash
 npm install
-```
-
-3. **Set up environment variables:**
-```bash
 cp .env.example .env
 ```
 
-Edit `.env` and add your bot credentials:
+Edit `.env`:
 ```env
-DISCORD_TOKEN=your_bot_token_here
-CLIENT_ID=your_client_id_here
+DISCORD_TOKEN=your_bot_token
+CLIENT_ID=your_application_id
 ```
 
-4. **Start the bot:**
+Start the bot:
 ```bash
 npm start
 ```
 
-## 📖 Usage
-
-### Initial Setup
-
-1. **Invite the bot** to your server with these permissions:
-   - Send Messages
-   - Embed Links
-   - Use Application Commands
-
-2. **Run setup command** in the channel where you want the rules menu:
+### 3. Invite Bot
+Use this URL (replace `CLIENT_ID`):
 ```
-/setup
+https://discord.com/oauth2/authorize?client_id=CLIENT_ID&permissions=274878221376&scope=bot%20applications.commands
 ```
 
-### Managing Rule Categories
+### 4. Deploy & Customize
+```
+/setup          # Deploy rules message in current channel
+/setmessage     # Customize main text and upload thumbnail
+/add            # Add rule categories with markdown support
+/edit           # Edit existing categories
+/delete         # Remove categories
+```
 
-#### Add a New Category
-```
-/add
-```
-Fill in the modal form with:
-- **Category ID**: Unique identifier (e.g., `general`, `voice`)
-- **Label**: Display name (e.g., "📜 General Rules")
-- **Description**: Short description for the menu
-- **Emoji**: Optional emoji for the category
-- **Rules**: List of rules (one per line)
+## 📖 Commands
 
-#### Edit a Category
-```
-/edit
-```
-Select the category from the dropdown, then update the fields.
+| Command | Description |
+|---------|-------------|
+| `/setup` | Deploy or update rules message |
+| `/setmessage` | Set main message text and image |
+| `/add` | Add new category (supports markdown & thumbnails) |
+| `/edit` | Edit existing category |
+| `/delete` | Delete category |
 
-#### Delete a Category
-```
-/delete
-```
-Select the category and confirm deletion.
-
-### User Experience
-
-Users simply click the select menu in the rules message, choose a category, and receive an ephemeral (private) message with the rules.
+**All commands are admin-only and rules auto-update on changes.**
 
 ## 📂 Project Structure
 
 ```
-Rules/
-├── LICENSE                    # GPL-3.0 License
-├── README.md                  # This file
-├── package.json               # Dependencies
-├── .env                       # Environment variables (create from .env.example)
-├── data/
-│   └── rules.json            # Auto-generated rules storage
-└── src/
-    ├── index.js              # Main bot entry point
-    ├── commands/             # Slash commands
-    │   ├── setup.js          # Deploy rules message
-    │   ├── add.js            # Add category
-    │   ├── edit.js           # Edit category
-    │   └── delete.js         # Delete category
-    ├── handlers/             # Interaction handlers
-    │   ├── modalHandler.js   # Modal submissions
-    │   ├── selectMenuHandler.js  # Select menu interactions
-    │   └── buttonHandler.js  # Button interactions
-    └── utils/
-        ├── rulesManager.js   # Data management
-        └── messageBuilder.js # Message construction
+src/
+├── commands/      # Slash commands (setup, add, edit, delete, setmessage)
+├── handlers/      # Modal, button, and select menu handlers
+└── utils/         # Rules manager & message builder
+data/
+└── rules.json     # Auto-generated storage (categories + config)
 ```
 
-## 🔧 Configuration
+## 💡 Tips
 
-The bot stores all data in `data/rules.json`. This file is automatically created and managed by the bot.
-
-Example category structure:
-```json
-{
-  "id": "general",
-  "label": "📜 General Rules",
-  "description": "Basic server rules",
-  "emoji": "📜",
-  "rules": [
-    "Be respectful to everyone",
-    "No spamming or flooding",
-    "Use appropriate channels"
-  ],
-  "color": 5814015
-}
-```
+- Rules support full markdown - format however you want
+- Upload images in modals for thumbnails
+- Bot auto-updates the message when you make changes
+- Back up `data/rules.json` to save your configuration
 
 ## 🤝 Contributing
 
-Contributions are welcome! This project is open-source under GPL-3.0.
+Contributions welcome! Fork, modify, and submit PRs.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the **GNU General Public License v3.0** - see the [LICENSE](LICENSE) file for details.
-
-**This means:**
-- ✅ Use it for free
-- ✅ Modify it
-- ✅ Share it
-- ✅ Contribute to it
-- ❌ **Sell it**
-- ❌ Make it proprietary
-
-Copyright (C) 2026 AshhLattee
+1. Fork the repo
+2. Create feature branch (`git checkout -b feature/NewFeature`)
+3. Commit changes (`git commit -m 'Add NewFeature'`)
+4. Push (`git push origin feature/NewFeature`)
+5. Open Pull Request
 
 ## 👤 Author
 
