@@ -1,6 +1,7 @@
+[![License: Apache 2.0 + Commons Clause](https://img.shields.io/badge/License-Apache%202.0%20with%20Commons%20Clause-blue)](LICENSE)
 # Rules Bot
 
-A free, open-source Discord bot that provides an interactive rules menu using Discord's Components v2. Built with discord.js and fully customizable through slash commands.
+A free, source-available Discord bot that provides an interactive rules menu using Discord's Components v2. Built with discord.js and fully customizable through slash commands.
 
 ## ⚠️ ANTI-RESALE NOTICE
 
@@ -146,6 +147,6 @@ For full license terms, see the [LICENSE](LICENSE) file.
 
 ---
 
-**Made with ❤️ by AshhLattee (AI-Augmented Engineer) | Free Forever | Open Source**
+**Made with ❤️ by AshhLattee (AI-Augmented Engineer) | Free Forever | source-available**
 
 *Developed with AI assistance*
