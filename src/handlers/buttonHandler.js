@@ -88,7 +88,8 @@ async function handleConfirmDelete(interaction) {
             const channel = await interaction.client.channels.fetch(config.channelId);
             await deployRulesMessage(channel);
         } catch (error) {
-            console.error('Error updating rules message:', error);
+            console.error('Error updating rules message after delete:', error);
+            // Continue anyway - category was deleted
         }
     }
 
