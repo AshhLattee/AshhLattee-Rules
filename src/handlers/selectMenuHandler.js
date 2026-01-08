@@ -79,9 +79,9 @@ async function handleEditSelect(interaction, categoryId) {
 
     const rulesInput = new TextInputBuilder()
         .setCustomId('category_rules')
-        .setLabel('Rules (one per line)')
+        .setLabel('Rules (supports full markdown)')
         .setStyle(TextInputStyle.Paragraph)
-        .setValue(category.rules.join('\n'))
+        .setValue(Array.isArray(category.rules) ? category.rules.join('\n') : category.rules)
         .setRequired(true)
         .setMaxLength(4000);
 

@@ -33,7 +33,7 @@ async function handleViewRules(interaction) {
         });
     }
 
-    const rulesText = category.rules.join('\n');
+    const rulesText = Array.isArray(category.rules) ? category.rules.join('\n') : category.rules;
 
     const container = new ContainerBuilder()
         .setAccentColor(category.color || 0x5865F2);

@@ -44,7 +44,7 @@ async function handleAddCategory(interaction) {
     }
 
     // Parse rules (one per line)
-    const rules = rulesText.split('\n').filter(line => line.trim()).map(line => line.trim());
+    const rules = rulesText.trim();
 
     // Create category
     const category = {
@@ -92,7 +92,7 @@ async function handleEditCategory(interaction) {
     const thumbnailFiles = interaction.fields.getUploadedFiles('category_thumbnail');
     const thumbnail = thumbnailFiles.size > 0 ? thumbnailFiles.first().url : category.thumbnail;
 
-    const rules = rulesText.split('\n').filter(line => line.trim()).map(line => line.trim());
+    const rules = rulesText.trim();
 
     const updatedCategory = {
         label,

@@ -43,9 +43,9 @@ module.exports = {
 
         const rulesInput = new TextInputBuilder()
             .setCustomId('category_rules')
-            .setLabel('Rules (one per line)')
+            .setLabel('Rules (supports full markdown)')
             .setStyle(TextInputStyle.Paragraph)
-            .setPlaceholder('Rule 1\nRule 2\nRule 3')
+            .setPlaceholder('Format however you want:\n1. First rule\n2. Second rule\n\nOr use **bold**, *italic*, etc.')
             .setRequired(true)
             .setMaxLength(4000);
 
